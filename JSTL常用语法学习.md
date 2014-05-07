@@ -1,5 +1,5 @@
 #JSTL常用语法学习#
-*杭永胜 hangyongsheng@baidu.com* 2014/3/26
+*footya@qq.com* 2014/3/26
 
 ##fn##
 *fn:contains(string, substring)*

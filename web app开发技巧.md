@@ -38,8 +38,11 @@ Webapp说白了就是一个针对Iphone、Android优化后的web站点，它使�
 
 1、首先我们来看看webkit内核中的一些私有的meta标签，这些meta标签在开发webapp时起到非常重要的作用
 -``````<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />```
+
 -```<meta content="yes" name="apple-mobile-web-app-capable" />```
+
 -```<meta content="black" name="apple-mobile-web-app-status-bar-style" />```
+
 -```<meta content="telephone=no" name="format-detection" />```
 
 第一个meta标签表示：强制让文档的宽度与设备的宽度保持1:1，并且文档最大的宽度比例是1.0，且不允许用户点击屏幕放大浏览；

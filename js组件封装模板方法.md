@@ -7,12 +7,12 @@
     /**
      * 组件封装示例
      * 需要传入的参数全部包裹在一个对象里
-     * @param {Object} opt {el:''}
+     * @param {Object} opt {src:''}
      */
     define(function(require, exports, module) {
         function Widget(opt) {
             //所有属性使用this._propertyName来命名，并且尽量写到构造函数里,包括在未来才可赋值的属性
-            this._el = opt.el;
+            this._src = opt.src;
             this.init();
         }
         $.extend(Widget.prototype, {
@@ -27,7 +27,7 @@
              * 组件节点事件绑定入口,所有事件绑定相关的函数放在这个里面
              */
             bindEvent: function(){
-                
+                this.bindNodeName();
             },
             /**
              * 事件绑定相关需以“bind+节点功能名称”命名如：bindSubmitBtn,一个方法内建议只绑定一个节点事件
@@ -46,30 +46,6 @@
              */
             otherFun: funciton(){
 
-            },
-            //接口看情况尽量通过事件对外暴漏
-            /**
-             * [自定义事件] 事件绑定
-             * @param  {String} name 自定义事件名
-             * @param  {Function} fun 回调函数
-             */
-            on: function(name, fun) {
-                if (!this.events[name]) {
-                    this.events[name] = [];
-                }
-                this.events[name].push(fun);
-            },
-            /**
-             * [自定义事件] 事件触发
-             * @param  {String} name 事件名
-             * @param  {Object} data 数据
-             */
-            fire: function(name, data) {
-                if (name in this.events[name]) {
-                    while (this.events[name].length > 0) {
-                        this.events[name].shift()(data);
-                    }
-                }
             }
         });
         module.exports = Widget;

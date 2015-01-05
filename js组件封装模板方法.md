@@ -7,12 +7,12 @@
     /**
      * 组件封装示例
      * 需要传入的参数全部包裹在一个对象里
-     * @param {Object} opt {src:''}
+     * @param {Object} opt {self:''}
      */
     define(function(require, exports, module) {
         function Widget(opt) {
             //所有属性使用this._propertyName来命名，并且尽量写到构造函数里,包括在未来才可赋值的属性
-            this._src = opt.src;
+            this._self = opt.self;
             this.init();
         }
         $.extend(Widget.prototype, {

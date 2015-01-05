@@ -1,4 +1,4 @@
->不适用eclipse调试方法
+>不使用eclipse调试方法
 
 1. 当前工程目录 `mvn clean install`;
 2. 生成的文件在**-web\output下**-1.0.0-SNAPSHOT.war;

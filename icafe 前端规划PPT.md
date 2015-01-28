@@ -49,7 +49,7 @@ highlightStyle: monokai_sublime
 [slide]
 ###  源代码目录示例
 --------------------------------------
->前端文件全部存放在mario-web\src\main\webapp下，包括js、css、img、jsp等等其他静态资源
+>前端文件全部存放在issue-web\src\main\webapp下，包括js、css、img、jsp等等其他静态资源
 
 ```
 +---pages
@@ -82,10 +82,10 @@ highlightStyle: monokai_sublime
 ```
 [slide]
 ###  编译后目录示例
->fis编译后前端代码放到mario-fis，后端用来做指向的jsp,【此目录不上传到svn】
+>fis编译后前端代码放到issue-fis，后端用来做指向的jsp,【此目录不上传到svn】
 
 ```
-+---mario-fis
++---issue-fis
     +---pages
     |   +---common //通用模块，第三方库以及公共组件
     |   |   +---widget
@@ -250,8 +250,8 @@ npm install -g fis
 
 [slide]
 ##FIS开发命令
-+ 打开cmd执行如下命令，不要关闭cmd窗口,fis会编译并监控webapp目录下的内容到mario-fis目录下
++ 打开cmd执行如下命令，不要关闭cmd窗口,fis会编译并监控webapp目录下的内容到issue-fis目录下
 ```
-fis release -r .\mario-web\src\main\webapp -opwd .\mario-fis 
+fis release -r .\issue-web\src\main\webapp -opwd .\issue-fis 
 ```
 //o压缩，p打包，w实时监控，d目标目录，d参数需放在最后面

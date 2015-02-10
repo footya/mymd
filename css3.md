@@ -167,3 +167,24 @@ div:hover {
 |ease-out：|由快到慢。等同于贝塞尔曲线(0, 0, 0.58, 1.0)|
 |ease-in-out：|由慢到快再到慢。等同于贝塞尔曲线(0.42, 0, 0.58, 1.0)|
 |cubic-bezier(number, number, number, number)：|特定的贝塞尔曲线类型，4个数值需在[0, 1]区间内|
+
+```
+div {
+  width: 200px;
+  height: 200px;
+  background-color: orange;
+  margin: 20px auto;
+  border-radius: 100%;
+  -webkit-transition-property: -webkit-border-radius;
+          transition-property: border-radius;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+  -webkit-transition-delay: .2s;
+          transition-delay: .2s;
+}
+div:hover {
+  border-radius: 0px;
+}
+```

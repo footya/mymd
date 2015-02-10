@@ -188,3 +188,31 @@ div:hover {
   border-radius: 0px;
 }
 ```
+
+##动画--过渡延迟时间 transition-delay
+>transition-delay属性和transition-duration属性极其类似，不同的是transition-duration是用来设置过渡动画的持续时间，而transition-delay主要用来指定一个动画开始执行的时间，也就是说当改变元素属性值后多长时间开始执行。
+有时我们想改变两个或者多个css属性的transition效果时，只要把几个transition的声明串在一起，用逗号（“，”）隔开，然后各自可以有各自不同的延续时间和其时间的速率变换方式。但需要值得注意的一点：第一个时间的值为 transition-duration，第二个为transition-delay。
+
+```
+a{ transition: background 0.8s ease-in 0.3,color 0.6s ease-out 0.3;}
+```
+```
+.wrapper {
+  width: 400px;
+  height: 400px;
+  margin: 20px auto;
+  border: 2px dotted red;
+}
+.wrapper div {
+  width: 200px;
+  height: 200px;
+  background-color: orange;
+  -webkit-transition: all .28s ease-in .1s;
+  transition: all .28s ease-in .1s;
+}
+.wrapper div:hover {
+  width: 300px;
+  height: 300px;
+  background-color: red;
+}
+```

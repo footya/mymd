@@ -74,58 +74,59 @@
 4. transition-delay:指定开始出现的延迟时间
 
 >transition-property用来指定过渡动画的CSS属性名称，而这个过渡属性只有具备一个中点值的属性（需要产生动画的属性）才能具备过渡效果，其对应具有过渡的CSS属性主要有:
- | 属性 |取值| 
- | ---- |----| 
- | background-color | color | 
- | background-image | only gradients | 
- | background-position | percentage, length | 
- | border-bottom-color | color | 
- | border-bottom-width | length | 
- | border-color | color | 
- | border-left-color | color | 
- | border-left-width | length | 
- | border-right-color | color | 
- | border-right-width | length | 
- | border-spacing | length | 
- | border-top-color | color | 
- | border-top-width | length | 
- | border-width | length | 
- | bottom | length, percentage | 
- | color | color | 
- | crop | rectangle | 
- | font-size | length, percentage | 
- | font-weight | number | 
- | grid-* | various | 
- | height | length, percentage | 
- | left | length, percentage | 
- | letter-spacing | length | 
- | line-height | number, length, percentage | 
- | margin-bottom | length | 
- | margin-left | length | 
- | margin-right | length | 
- | margin-top | length | 
- | max-height | length, percentage | 
- | max-width | length, percentage | 
- | min-height | length, percentage | 
- | min-width | length, percentage | 
- | opacity | number | 
- | outline-color | color | 
- | outline-offset | integer | 
- | outline-width | length | 
- | padding-bottom | length | 
- | padding-left | length | 
- | padding-right | length | 
- | padding-top | length | 
- | right | length, percentage | 
- | text-indent | length, percentage | 
- | text-shadow | shadow | 
- | top | length, percentage | 
- | vertical-align | keywords, length, percentage | 
- | visibility | visibility | 
- | width | length, percentage | 
- | word-spacing | length, percentage | 
- | z-index | integer | 
- | zoom | number | 
+
+| 属性名称            | 类型            |
+| ------------------- | --------------- |
+| background-color    | color           |
+| background-image    | only gradients  |
+| background-position | percentage, length |
+| border-bottom-color | color |
+| border-bottom-width | length |
+| border-color | color |
+| border-left-color | color |
+| border-left-width | length |
+| border-right-color | color |
+| border-right-width | length |
+| border-spacing | length |
+| border-top-color | color |
+| border-top-width | length |
+| border-width | length |
+| bottom | length, percentage |
+| color | color |
+| crop | rectangle |
+| font-size | length, percentage |
+| font-weight | number |
+| grid-* | various |
+| height | length, percentage |
+| left | length, percentage |
+| letter-spacing | length |
+| line-height | number, length, percentage |
+| margin-bottom | length |
+| margin-left | length |
+| margin-right | length |
+| margin-top | length |
+| max-height | length, percentage |
+| max-width | length, percentage |
+| min-height | length, percentage |
+| min-width | length, percentage |
+| opacity | number |
+| outline-color | color |
+| outline-offset | integer |
+| outline-width | length |
+| padding-bottom | length |
+| padding-left | length |
+| padding-right | length |
+| padding-top | length |
+| right | length, percentage |
+| text-indent | length, percentage |
+| text-shadow | shadow |
+| top | length, percentage |
+| vertical-align | keywords, length, percentage |
+| visibility | visibility |
+| width | length, percentage |
+| word-spacing | length, percentage |
+| z-index | integer |
+| zoom | number |
 
 ```
 div {

@@ -20,3 +20,17 @@
    -moz-transform: skew(45deg) 
         transform: skew(45deg);
 ```
+##变形--缩放 scale()
+>让元素根据中心原点对对象进行缩放
+
+###scale 具有三种情况
+
+1. scale(X,Y)使元素水平方向和垂直方向同时缩放
+2. scaleX(x)元素仅水平方向缩放
+3. scaleY(y)元素仅垂直方向缩放
+
+```
+-webkit-transform: scale(1.5);
+   -moz-transform:scale(1.5)
+        transform: scale(1.5);
+```

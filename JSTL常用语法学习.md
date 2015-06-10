@@ -123,8 +123,8 @@ ${li}
 
 4. 循环遍历，输出第一个或最后一个元素。
 <pre>&lt;c:foreach items="${list}" var ="li" varStatus="status"&gt;
-    &lt;c:if text="${status.first}"&gt;我是第一个元素&lt;/c:if&gt;
-    &lt;c:if text="${status.last}"&gt;我是最后一个元素&lt;/c:if&gt;
+    &lt;c:if test="${status.first}"&gt;我是第一个元素&lt;/c:if&gt;
+    &lt;c:if test="${status.last}"&gt;我是最后一个元素&lt;/c:if&gt;
     &lt;/c:foreach&gt;</pre>
 >注意：first表示如果是一个元素，则返回ture,反之则返回false
            last 表示如果是最后一个元素，则返回ture,反之则返回false。

@@ -141,7 +141,7 @@ div {
   -webkit-transition-timing-function: ease-in;
           transition-timing-function: ease-in;
   -webkit-transition-delay: .18s;
-  	  transition-delay: .18s;
+      transition-delay: .18s;
 }
 div:hover {
   height: 400px;
@@ -216,3 +216,48 @@ a{ transition: background 0.8s ease-in 0.3,color 0.6s ease-out 0.3;}
   background-color: red;
 }
 ```
+
+## animation 动画
+> animation是基于关键帧的动画
+
+##语法
+
+```
+animation: name duration timing-function delay iteration-count direction;
+```
+
+##代码示例
+```
+div {
+  animation: myfirst 5s linear 2s infinite alternate;
+}
+@keyframes myfirst
+{
+  from { background: red; }
+  to { background: yellow; }
+}
+
+.running {
+  animation-play-state:running;
+}
+.paused {
+  animation-play-state:paused;
+}
+```
+
+animation属性是一个简写属性，用于设置六个动画属性：
+
+- animation-name  keyframe名称
+- animation-duration  完成动画所花费的时间
+- animation-timing-function  动画的速度曲线
+- animation-delay  动画开始之前的延时
+- animation-iteration-count  动画播放的次数,默认为1，取值n|infinite
+- animation-direction  是否在下一周期逆向地播放,默认是"normal",取值normal|alternate
+- animation-play-state  是否正在运行或暂停，默认"running",取值paused|running
+- animation-fill-mode 动画在播放之前或之后，其动画效果是否可见，取值none | forwards | backwards | both;
+| 值            | 备注            |
+| ------------- | --------------- |
+|none|不改变默认行为|
+|forward|动画完成后，保持最后一个属性值（在最后一个关键帧中定义）|
+|backwards|在animation-delay所指定的一段时间内，在动画显示之前，应用开始属性值（在第一个关键帧中定义）|
+|both|向前和向后填充模式都被应用|

@@ -255,6 +255,7 @@ animation属性是一个简写属性，用于设置六个动画属性：
 - animation-direction  是否在下一周期逆向地播放,默认是"normal",取值normal|alternate
 - animation-play-state  是否正在运行或暂停，默认"running",取值paused|running
 - animation-fill-mode 动画在播放之前或之后，其动画效果是否可见，取值none | forwards | backwards | both;
+
 | 值            | 备注            |
 | ------------- | --------------- |
 |none|不改变默认行为|

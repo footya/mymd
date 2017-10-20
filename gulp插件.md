@@ -1,3 +1,4 @@
+```
 {
   "name": "hackthon",
   "version": "1.0.0",
@@ -15,3 +16,4 @@
   "author": "footya",
   "license": "ISC"
 }
+```

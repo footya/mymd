@@ -3,21 +3,21 @@ speaker: 杭永胜
 transition: fade
 theme: moon
 highlightStyle: monokai_sublime
-<script src="http://static.jsbin.com/js/embed.min.js?4.1.0"></script>
+
 [slide class="title-slide"]
 <div class="center"><img src="/logo-colorful.svg" width="80"/></div>
 # 前端框架San学习
 <small>杭永胜</small>
 
 [slide]
-## san是什么
+## San是什么
 -----------------------------------
 - 由百度EFE 团队开发
 - 一个传统的MVVM组件框架
 - san不是单词就是三的拼音
 
 [slide]
-## san 有什么
+## San 有什么
 -----------------------------------
 - HTML模板
 - 数据驱动
@@ -28,7 +28,7 @@ highlightStyle: monokai_sublime
 - 浏览器兼容到IE8
 
 [slide]
-## san 怎么用
+## San 怎么用
 1. cdn 引用
 ```
 // 开发版本
@@ -90,9 +90,7 @@ myApp.attach(document.body);
 
 
 [slide]
-## 数据操作
-
-- 初始化
+## 数据操作 - 初始化
 ```
 san.defineComponent({
     initData: function () {
@@ -106,7 +104,7 @@ san.defineComponent({
 ```
 
 [slide]
-- set get
+## 数据操作 - set get
 ```
 san.defineComponent({
     attached: function () {
@@ -161,7 +159,6 @@ san.defineComponent({
 {{ expr [[| filter-call1] | filter-call2...] }}
 ```
 
-内置过滤器：
 - html HTML转义
 - url URL转义
 - raw 不进行转义
@@ -191,6 +188,7 @@ myApp.attach(document.body);
 ```
 
 [slide]
+## 过滤器demo
 <a class="jsbin-embed" href="http://jsbin.com/zesuso/embed?html,output">JS Bin on jsbin.com</a>
 
 
@@ -203,7 +201,7 @@ myApp.attach(document.body);
 - 静态页面也可以实现首屏渲染
 
 [slide]
-## 见证奇迹的时刻！
+## 举个例子
 <a class="jsbin-embed" href="http://jsbin.com/puriwuv/embed?html,output">JS Bin on jsbin.com</a>
 
 
@@ -424,7 +422,7 @@ var AddForm = san.defineComponent({
 <code>this.owner.xxx</code>
 </pre>
 </div>
-<a class="jsbin-embed" href="http://jsbin.com/vaqisis/embed?html,output">JS Bin on jsbin.com</a>
+<a class="jsbin-embed" href="http://jsbin.com/rojayej/embed?html,output">JS Bin on jsbin.com</a>
 
 [slide]
 ## messages
@@ -480,3 +478,14 @@ var Select = san.defineComponent({
 [slide]
 ### messages demo
 <a class="jsbin-embed" href="http://jsbin.com/yexopig/embed?html,output">JS Bin on jsbin.com</a>
+<script src="http://static.jsbin.com/js/embed.min.js?4.1.0"></script>
+
+
+## san 配套
+- [路由管理 san-router](https://github.com/ecomfe/san-router) 
+    - [官方 demo](https://github.com/ecomfe/san/tree/master/example/todos-esnext)
+- [应用状态管理 san-store](https://github.com/ecomfe/san-store)
+    - [官方 demo](https://github.com/ecomfe/san-store/tree/master/example/todos)
+- [不可变数据更新库 san-update](https://github.com/ecomfe/san-update)
+- [san组件库 san-mui](https://ecomfe.github.io/san-mui/)
+- [San Devtool](https://chrome.google.com/webstore/detail/san-devtool/pjnngoafflflkagpebgfifjejlnfhahc)

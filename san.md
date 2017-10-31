@@ -1,7 +1,7 @@
 title: 前端框架San学习
 speaker: 杭永胜
 transition: fade
-theme: moon
+theme: dark
 highlightStyle: monokai_sublime
 
 [slide class="title-slide"]
@@ -10,11 +10,12 @@ highlightStyle: monokai_sublime
 <small>杭永胜</small>
 
 [slide]
-## San是什么
+## San 是什么
 -----------------------------------
+- san不是单词就是三的汉语拼音
+
 - 由百度EFE 团队开发
-- 一个传统的MVVM组件框架
-- san不是单词就是三的拼音
+- 一个MVVM组件框架
 
 [slide]
 ## San 有什么
@@ -124,7 +125,7 @@ san.defineComponent({
 
 
 [slide]
-- 数组操作
+## 数据操作 - 数组操作
 ```
 san.defineComponent({
     flag: function () {
@@ -149,126 +150,6 @@ san.defineComponent({
         this.data.splice('users', [index, deleteCount]);
     }
 });
-```
-
-[slide]
-## 过滤器
-
-过滤器之间类似管道的方式前一个的输出做为后一个的输入向后传递
-```
-{{ expr [[| filter-call1] | filter-call2...] }}
-```
-
-- html HTML转义
-- url URL转义
-- raw 不进行转义
-
-
-[slide]
-## 自定义过滤器
-```
-var MyApp = san.defineComponent({
-    template: ''
-        + '<div>'
-        +   '<input value="{=name=}" placeholder="please input">'
-        +   'Hello {{name | upper | replaceToOther("A", "-")}}!'
-        + '</div>',
-    filters: {
-        upper: function (value) {
-            return value && value.toLocaleUpperCase();
-        },
-        replaceToOther: function (value, from, to) {
-            var reg = new RegExp(from, 'g');
-            return value && value.replace(reg, to);
-        }
-    }
-});
-var myApp = new MyApp();
-myApp.attach(document.body);
-```
-
-[slide]
-## 过滤器demo
-<a class="jsbin-embed" href="http://jsbin.com/zesuso/embed?html,output">JS Bin on jsbin.com</a>
-
-
-[slide]
-## 组件反解
-> 组件初始化时传入 el，其将作为组件根元素，并以此反解析出视图结构。
-
-- html模板直接输出，轻松缩短首屏时间
-- 无需依赖node，任何后端语言都可以
-- 静态页面也可以实现首屏渲染
-
-[slide]
-## 举个例子
-<a class="jsbin-embed" href="http://jsbin.com/puriwuv/embed?html,output">JS Bin on jsbin.com</a>
-
-
-[slide]
-## 怎么做到的？
-
-- 组件模板直接输出到dom树，通过注释添加标记
-```
-<div id="test-el">
-  <input prop-value="{=name=}" value=""/>
-  <button on-click="changeName">change name</button>
-  Hello <span><!--s-text:{{name}}-->errorrik<!--/s-text--></span>
-</div>
-```
-
-- 组件通过传入dom节点，完成行为管理和视图刷新
-```
-var MyApp = san.defineComponent({
-  changeName: function () {
-    this.data.set('name', 'world');
-  }
-});
-var myApp = new MyApp({el: document.getElementById('test-el')});
-myApp.attach(document.body);
-```
-
-
-[slide]
-## 事件处理 - DOM事件
-- DOM事件 [demo](http://jsbin.com/jokomag/edit?html,output)
-```
-san.defineComponent({
-    initData: function () {
-        return {title: 'test'}
-    },
-    template: '<button type="button" on-click="submit">submit</button>',
-    submit: function () {
-        var title = this.data.get('title');
-        alert(title);
-    }
-});
-```
-
-[slide]
-## 事件处理 - 自定义事件
-[demo](http://jsbin.com/buxubiy/edit?html,output)
-```
-var Label = san.defineComponent({
-    template: '<div class="ui-label" title="{{text}}">{{text}}</div>',
-    initData: function(){
-        return {text: 'demo'}
-    },
-    attached: function () {
-        this.fire('done', this.data.get('text') + ' done');
-    }
-});
-var MyComponent = san.defineComponent({
-    template: '<div><ui-label bind-text="name" on-done="labelDone($event)"></ui-label></div>',
-    components: {
-        'ui-label': Label
-    },
-    labelDone: function (doneMsg) {
-        alert(doneMsg);
-    }
-});
-var myApp = new MyComponent();
-myApp.attach(document.body);
 ```
 
 [slide]
@@ -481,7 +362,126 @@ var Select = san.defineComponent({
 <script src="http://static.jsbin.com/js/embed.min.js?4.1.0"></script>
 
 
-## san 配套
+
+[slide]
+## 过滤器
+
+过滤器之间类似管道的方式前一个的输出做为后一个的输入向后传递
+```
+{{ expr [[| filter-call1] | filter-call2...] }}
+```
+- html HTML转义
+- url URL转义
+- raw 不进行转义
+
+
+[slide]
+## 自定义过滤器
+```
+var MyApp = san.defineComponent({
+    template: ''
+        + '<div>'
+        +   '<input value="{=name=}" placeholder="please input">'
+        +   'Hello {{name | upper | replaceToOther("A", "-")}}!'
+        + '</div>',
+    filters: {
+        upper: function (value) {
+            return value && value.toLocaleUpperCase();
+        },
+        replaceToOther: function (value, from, to) {
+            var reg = new RegExp(from, 'g');
+            return value && value.replace(reg, to);
+        }
+    }
+});
+var myApp = new MyApp();
+myApp.attach(document.body);
+```
+
+[slide]
+## 过滤器demo
+<a class="jsbin-embed" href="http://jsbin.com/zesuso/embed?html,output">JS Bin on jsbin.com</a>
+
+
+[slide]
+## 组件反解
+> 组件初始化时传入 el，其将作为组件根元素，并以此反解析出视图结构。
+
+- html模板直接输出，轻松缩短首屏时间
+- 无需依赖node，任何后端语言都可以
+- 静态页面也可以实现首屏渲染
+
+[slide]
+## 举个例子
+<a class="jsbin-embed" href="http://jsbin.com/puriwuv/embed?html,output">JS Bin on jsbin.com</a>
+
+
+[slide]
+## 怎么做到的？
+
+```
+<div id="test-el">
+  <input prop-value="{=name=}" value=""/>
+  <button on-click="changeName">change name</button>
+  Hello <span><!--s-text:{{name}}-->errorrik<!--/s-text--></span>
+</div>
+```
+```
+var MyApp = san.defineComponent({
+  changeName: function () {
+    this.data.set('name', 'world');
+  }
+});
+var myApp = new MyApp({el: document.getElementById('test-el')});
+myApp.attach(document.body);
+```
+
+
+[slide]
+## 事件处理 - DOM事件
+- DOM事件 [demo](http://jsbin.com/jokomag/edit?html,output)
+```
+san.defineComponent({
+    initData: function () {
+        return {title: 'test'}
+    },
+    template: '<button type="button" on-click="submit">submit</button>',
+    submit: function () {
+        var title = this.data.get('title');
+        alert(title);
+    }
+});
+```
+
+[slide]
+## 事件处理 - 自定义事件
+[demo](http://jsbin.com/buxubiy/edit?html,output)
+```
+var Label = san.defineComponent({
+    initData: function () {
+        return {text: 'demo'}
+    },
+    template: '<div class="ui-label" title="{{text}}">'
+        + '<button on-click="changeText">fire</button>{{text}}</div>',
+    changeText: function () {
+        this.fire('done', this.data.get('text') + ' done');
+    }
+});
+var MyComponent = san.defineComponent({
+    template: '<div><ui-label bind-text="name" on-done="labelDone($event)"></ui-label></div>',
+    components: {
+        'ui-label': Label
+    },
+    labelDone: function (doneMsg) {
+        alert(doneMsg);
+    }
+});
+var myApp = new MyComponent();
+myApp.attach(document.body);
+```
+
+[slide]
+## San 配套
 - [路由管理 san-router](https://github.com/ecomfe/san-router) 
     - [官方 demo](https://github.com/ecomfe/san/tree/master/example/todos-esnext)
 - [应用状态管理 san-store](https://github.com/ecomfe/san-store)
@@ -489,3 +489,20 @@ var Select = san.defineComponent({
 - [不可变数据更新库 san-update](https://github.com/ecomfe/san-update)
 - [san组件库 san-mui](https://ecomfe.github.io/san-mui/)
 - [San Devtool](https://chrome.google.com/webstore/detail/san-devtool/pjnngoafflflkagpebgfifjejlnfhahc)
+
+
+[slide]
+## 优点
+- 组件反解，轻松解决首屏渲染问题
+- 浏览器兼容到IE8
+- 体积小
+
+[slide]
+## 不足
+- 知名度不高，生态圈薄弱
+
+[slide]
+## 谢谢
+# Q&A
+
+

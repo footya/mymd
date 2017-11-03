@@ -16,4 +16,4 @@ pbcopy < ~/.ssh/xxx.pub
 ```$ git commit -m "add something"```
 
 - 这个时候已经提交到本地git版本库了，需要传到github需要推送下
-```$ git push origin master``
+```$ git push origin master```

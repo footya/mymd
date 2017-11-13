@@ -23,3 +23,5 @@ pbcopy < ~/.ssh/xxx.pub
  ```
  git commit --amend
  ```
+
+- [How We Use Commitizen to Clean Up Commit Messages](https://dev.bleacherreport.com/how-we-use-commitizen-to-clean-up-commit-messages-a16790dcd2fd)

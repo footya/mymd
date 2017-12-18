@@ -26,6 +26,7 @@ pbcopy < ~/.ssh/xxx.pub
 - 切换到远程分支
 ```
 git fetch origin branchname:branchname
+git checkout branchname
 // or
 git checkout origin/atom_static_path -b atom_static_path
 ```

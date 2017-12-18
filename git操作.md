@@ -23,5 +23,11 @@ pbcopy < ~/.ssh/xxx.pub
  ```
  git commit --amend
  ```
+- 切换到远程分支
+```
+git fetch origin branchname:branchname
+// or
+git checkout origin/atom_static_path -b atom_static_path
+```
 
 - [How We Use Commitizen to Clean Up Commit Messages](https://dev.bleacherreport.com/how-we-use-commitizen-to-clean-up-commit-messages-a16790dcd2fd)

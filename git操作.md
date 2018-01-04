@@ -18,6 +18,12 @@ pbcopy < ~/.ssh/xxx.pub
 - 这个时候已经提交到本地git版本库了，需要传到github需要推送下
 ```$ git push origin master```
 
+## submodule子模块拉取
+```
+git submodule init
+git submodule update
+```
+
 ## 其他命令
  - 修改commit message
  ```

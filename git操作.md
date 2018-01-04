@@ -32,3 +32,4 @@ git checkout origin/atom_static_path -b atom_static_path
 ```
 
 - [How We Use Commitizen to Clean Up Commit Messages](https://dev.bleacherreport.com/how-we-use-commitizen-to-clean-up-commit-messages-a16790dcd2fd)
+- [Git Submodule管理项目子模块](https://www.cnblogs.com/nicksheng/p/6201711.html)
